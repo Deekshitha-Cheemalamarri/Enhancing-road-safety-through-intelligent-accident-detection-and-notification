@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        window.onload = function() {
+            // Clear input fields on page load
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        };
+
+        // Password validation function
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var regex = /^(?=.*[A-Z]).{8,}$/; // At least one capital letter and 8 characters long
+
+            if (!regex.test(password)) {
+                alert("Password must contain at least 1 capital letter and be at least 8 characters long");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body class="bg">
+    <header>
+        <h1>Accident Detection System</h1>
+    </header>
+    <h2 class="center">Register</h2>
+    <main>
+        <form action="{{ url_for('register') }}" method="post" autocomplete="off" onsubmit="return validatePassword();">
+            <label for="mail">Mail:</label>
+            <input type="mail" id="mail" name="mail" placeholder="mail" required><br><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="new-password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Accident Detection System</p>
+    </footer>
+</body>
+</html>

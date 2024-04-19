@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Reporting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg">
+    <header>
+        <h1>Accident Detection System</h1>
+    </header>	
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p style="color: white;">Welcome to the Accident Reporting System. Please login or register to continue.</p>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Accident Detection System</p>
+    </footer>
+</body>
+</html>

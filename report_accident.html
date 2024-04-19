@@ -1,0 +1,147 @@
+<!-- report_accident.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Accident</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg">
+    <header>
+        <h1>Accident Detection System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('report_accident') }}">Report Accident</a></li>
+            <li><a href="{{ url_for('view_accidents') }}">View Accidents</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+    <h2 class="center">Report Accident</h2>
+    <main>        
+        <form method="POST">
+            <label for="route">Route (From - To):</label>
+            <select id="route" name="route" required>
+                <option value="">Select Route</option>
+                <option value="Route 1">vijayawada to hyderabad</option>
+                <option value="Route 2">vijayawada to kakinada</option>
+               <!-- <option value="Route 3">vijayawada to machilipatnam</option>-->
+                <option value="Route 3">vijayawada to Tirupati</option>
+                <option value="Route 4">vijayawada to Nellore</option>
+                <option value="Route 5">vijayawada to Srikalahasthi</option>
+                <option value="Route 6">vijayawada to Ongole</option>
+                <option value="Route 7">Guntur to Vijayawada</option>
+                <option value="Route 8">Tirupati to Ongole</option>
+                <option value="Route 9">Tirupati to Guntur</option>
+                <option value="Route 10">Tirupati to Hyderabad</option>
+                <option value="Route 11">Mangalagiri to Miriyalaguda</option>
+                <option value="Route 12">Guntur to Suryapet</option>
+                <option value="Route 13">Vijayawada to Tenali</option>
+                <option value="Route 14">Chilakaluripet to Hyderabaad</option>
+                <option value="Route 15">Narasaraopet to Bhongir</option>
+                <option value="Route 16">Nellore to Tirupati</option>
+                <option value="Route 17">Vijayawada to Nuzvid</option>
+                <option value="Route 18">Eluru to Khammam</option>
+                <option value="Route 19">Gudur to Chirala</option>
+                <option value="Route 20">Gudur to Ongole</option>
+                <option value="Route 21">Ongole to Kandukur</option>
+                <option value="Route 22">Ongole to Musunur</option>
+                <option value="Route 23">Ongole to Hyderabad</option>
+                <option value="Route 24">Vijayawada to Visakhapatnam</option>
+<option value="Route 25">Guntur to Visakhapatnam</option>
+<option value="Route 26">Vijayawada to Rajahmundry</option>
+<option value="Route 27">Vijayawada to Anantapur</option>
+<option value="Route 28">Vijayawada to Kurnool</option>
+<option value="Route 29">Tirupati to Visakhapatnam</option>
+<option value="Route 30">Nellore to Visakhapatnam</option>
+<option value="Route 31">Kadapa to Visakhapatnam</option>
+<option value="Route 32">Kadapa to Tirupati</option>
+<option value="Route 33">Kadapa to Kurnool</option>
+<option value="Route 34">Hyderabad to Warangal</option>
+<option value="Route 35">Hyderabad to Karimnagar</option>
+<option value="Route 36">Hyderabad to Nizamabad</option>
+<option value="Route 37">Hyderabad to Adilabad</option>
+<option value="Route 38">Hyderabad to Mahbubnagar</option>
+<option value="Route 39">Hyderabad to Nalgonda</option>
+<option value="Route 40">Hyderabad to Khammam</option>
+<option value="Route 41">Hyderabad to Ramagundam</option>
+<option value="Route 42">Hyderabad to Siddipet</option>
+<option value="Route 43">Hyderabad to Mancherial</option>
+<option value="Route 44">Hyderabad to Sangareddy</option>
+<option value="Route 45">Hyderabad to Medak</option>
+<option value="Route 46">Hyderabad to Vikarabad</option>
+<option value="Route 47">Hyderabad to Suryapet</option>
+<option value="Route 48">Hyderabad to Nizamabad</option>
+<option value="Route 49">Hyderabad to Mahabubabad</option>
+<option value="Route 50">Hyderabad to Jagtial</option>
+<option value="Route 51">Hyderabad to Kamareddy</option>
+<option value="Route 52">Hyderabad to Siddipet</option>
+<option value="Route 53">Hyderabad to Narayanpet</option>
+<option value="Route 54">Hyderabad to Zaheerabad</option>
+<option value="Route 55">Hyderabad to Sadasivpet</option>
+<option value="Route 56">Hyderabad to Bodhan</option>
+<option value="Route 57">Hyderabad to Jangaon</option>
+<option value="Route 58">Hyderabad to Bhongir</option>
+<option value="Route 59">Hyderabad to Vikarabad</option>
+<option value="Route 60">Hyderabad to Tandur</option>
+<option value="Route 61">Hyderabad to Ramagundam</option>
+<option value="Route 62">Hyderabad to Bhadrachalam</option>
+<option value="Route 63">Hyderabad to Basara</option>
+<option value="Route 64">Hyderabad to Kothagudem</option>
+<option value="Route 65">Hyderabad to Manthani</option>
+<option value="Route 66">Hyderabad to Korutla</option>
+<option value="Route 67">Hyderabad to Asifabad</option>
+<option value="Route 68">Hyderabad to Kothagudem</option>
+<option value="Route 69">Hyderabad to Warangal</option>
+<option value="Route 70">Hyderabad to Karimnagar</option>
+<option value="Route 71">Hyderabad to Nizamabad</option>
+<option value="Route 72">Hyderabad to Adilabad</option>
+<option value="Route 73">Hyderabad to Ramagundam</option>
+<option value="Route 74">Hyderabad to Jagtial</option>
+<option value="Route 75">Hyderabad to Mahabubabad</option>
+<option value="Route 76">Hyderabad to Miryalaguda</option>
+<option value="Route 77">Hyderabad to Sangareddy</option>
+<option value="Route 78">Hyderabad to Medak</option>
+<option value="Route 79">Hyderabad to Vikarabad</option>
+<option value="Route 80">Hyderabad to Suryapet</option>
+<option value="Route 81">Hyderabad to Nalgonda</option>
+<option value="Route 82">Hyderabad to Khammam</option>
+<option value="Route 83">Hyderabad to Ramagundam</option>
+<option value="Route 84">Hyderabad to Nizamabad</option>
+<option value="Route 85">Hyderabad to Mahabubabad</option>
+<option value="Route 86">Hyderabad to Jagtial</option>
+<option value="Route 87">Hyderabad to Kamareddy</option>
+<option value="Route 88">Hyderabad to Siddipet</option>
+<option value="Route 89">Hyderabad to Narayanpet</option>
+<option value="Route 90">Hyderabad to Zaheerabad</option>
+<option value="Route 91">Hyderabad to Sadasivpet</option>
+<option value="Route 92">Hyderabad to Bodhan</option>
+<option value="Route 93">Hyderabad to Jangaon</option>
+<option value="Route 94">Hyderabad to Bhongir</option>
+<option value="Route 95">Hyderabad to Vikarabad</option>
+<option value="Route 96">Hyderabad to Tandur</option>
+<option value="Route 97">Hyderabad to Ramagundam</option>
+<option value="Route 98">Hyderabad to Bhadrachalam</option>
+<option value="Route 99">Hyderabad to Basara</option>
+<option value="Route 100">Hyderabad to Kothagudem</option>
+
+                <!-- Add more options as needed -->
+            </select><br><br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="location" required><br><br>
+            <label for="date">Date:</label>
+<input type="text" id="date" name="date" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD" required><br><br>
+            <label for="time">Time:</label>
+            <input type="text" id="time" name="time" required><br><br>
+            <label for="casualties">Casualties:</label>
+            <input type="number" id="casualties" name="casualties" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Accident Detection System</p>
+    </footer>
+</body>
+</html>
